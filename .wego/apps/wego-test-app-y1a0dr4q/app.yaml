@@ -1,0 +1,14 @@
+---
+apiVersion: wego.weave.works/v1alpha1
+kind: Application
+metadata:
+  labels:
+    wego.weave.works/app-identifier: wego-a13058e7504d1234ec813513b1da4b6d
+  name: wego-test-app-y1a0dr4q
+  namespace: wego-system
+spec:
+  branch: main
+  deployment_type: kustomize
+  path: ./
+  source_type: git
+  url: ssh://git@github.com/weaveworks-gitops-test/wego-test-app-y1a0dr4q.git
