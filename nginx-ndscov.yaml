@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-nginx-ndscov
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ndscov
+  namespace: my-nginx-ndscov
+  labels:
+    name: nginx-ndscov
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-ndscov
+  template:
+    metadata:
+      namespace: my-nginx-ndscov
+      labels:
+        name: nginx-ndscov
+    spec:
+      containers:
+      - name: nginx-ndscov
+        image: nginx
+        ports:
+        - containerPort: 80
+
